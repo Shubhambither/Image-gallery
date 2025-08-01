@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    height: 100vh;
+}
+body::before{
+background: none;
+}
+
+.main {
+    position: relative;
+}
+
+.nav {
+    position: relative;
+}
+
+.section,
+.section1 {
+    padding: 20px;
+
+}
+
+.section1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: all 1s ease;
+}
+
+
+
+.box1 {
+    background: #222;
+    margin: 15px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #000;
+    height: 70vh;
+    width: 70%;
+}
+
+.s {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+
+.s:hover {
+    transform: scale(1.1);
+    
+}
+
+.box {
+  /* background: #222; */
+  margin: 20px auto;
+  border-radius: 12px;
+  /* box-shadow: 0 0 10px #000; */
+  height: 40vh;
+  width: 100px;
+  position: relative;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.box:hover {
+  z-index: 10; /* bring it to top */
+}
+
+.f {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.box:hover .f {
+  transform: scale(1.1);
+  z-index: 10;
+  width: 500px;
+  height: 100vh;
+}
+
+#a{
+    z-index: 8;
+}
+#b{
+    z-index: 7;
+}
+.lighbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  /* ✅ ensure it's above all */
+  top: 0;
+  right: 0%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.res {
+  position: absolute;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.invert {
+  z-index: 1;
+  align-self: flex-start;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.invert:active {
+  transform: scale(0.9);
+}
+@media (max-width: 600px) {
+  body {
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  .box1 {
+    width: 95%;
+    height: auto;
+  }
+
+  .s {
+    height: auto;
+    max-height: 70vh;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .section1 {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .box {
+    width: 90%;
+    height: auto;
+    margin: 10px 0;
+    transition: none;
+  }
+
+  .box:hover {
+    z-index: 10;
+  }
+
+  .f {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .box:hover .f {
+    transform: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .nav,
+  .h {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .lighbox {
+    flex-direction: column;
+    padding: 10px;
+    top: 50px;
+    width: 100%;
+  }
+
+  .invert {
+    align-self: flex-end;
+    margin: 10px;
+    z-index: 2;
+  }
+
+  .res {
+    width: 100vw;
+    height: 80vh;
+    object-fit: contain;
+  }
+
+  .next,
+  .back {
+    width: 40px;
+    height: 40px;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  .back {
+    left: 10px;
+  }
+}

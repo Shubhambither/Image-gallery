@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Layout Containers */
+.container {
+    display: flex;
+    margin-top: 30px;
+    height: 80vh;
+    flex-wrap: wrap;
+}
+
+.movies {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #ededed #111
+}
+
+.movies::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movies::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 10px;
+}
+
+.movies::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 10px;
+}
+
+::selection {
+    background: none;
+}
+
+/* Common Section Styles */
+.marvel,
+.dc,
+.jw,
+.xm,
+.faf {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90vw;
+    height: 70vh;
+    padding: 20px;
+    gap: 40px;
+    background-color: rgba(240, 248, 255, 0.068);
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+.marvel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/mbg.jpg") no-repeat center top;
+    background-size: cover;
+    filter: blur(5px) brightness(0.7);
+    /* or brightness(1.2), contrast(), etc. */
+    z-index: -1;
+    /* Send behind content */
+}
+
+.dc::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/jl.webp") no-repeat center top;
+    background-size: cover;
+    filter: blur(5px) brightness(0.7);
+    /* or brightness(1.2), contrast(), etc. */
+    z-index: -1;
+    /* Send behind content */
+}
+
+.jw::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/j.jpg") no-repeat center top;
+    background-size: cover;
+    filter: blur(5px) brightness(0.7);
+    /* or brightness(1.2), contrast(), etc. */
+    z-index: -1;
+    /* Send behind content */
+}
+
+.faf::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/fa.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(5px) brightness(0.7);
+    /* or brightness(1.2), contrast(), etc. */
+    z-index: -1;
+    /* Send behind content */
+}
+
+.xm::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/x.jpg") no-repeat center top;
+    background-size: cover;
+    filter: blur(5px) brightness(0.7);
+    /* or brightness(1.2), contrast(), etc. */
+    z-index: -1;
+    /* Send behind content */
+}
+
+
+
+/* Image Styles */
+.image-section .m {
+    border-radius: 7px;
+    width: 510px;
+    height: 500px;
+    margin-left: 20px;
+    margin-top: 5px;
+    transition: all 1.5s ease;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-section .m:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+/* Text Styling */
+.text-section a {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    max-width: 500px;
+    font-size: 18px;
+    line-height: 1.6;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 700;
+}
+
+/* Responsive: Mobile */
+@media (max-width: 600px) {
+
+    .marvel,
+    .dc,
+    .gow {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        gap: 20px;
+    }
+
+    .image-section img {
+        width: 90vw;
+        height: auto;
+    }
+
+    .text-section {
+        max-width: 90vw;
+        font-size: 16px;
+    }
+
+    .container {
+        margin-top: 50px;
+        height: auto;
+    }
+
+
+}
+
+/* Responsive: Tablets */
+@media (min-width: 601px) and (max-width: 992px) {
+    .ng {
+        left: 40%;
+    }
+
+    .marvel,
+    .dc,
+    .gow {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .image-section img {
+        width: 80vw;
+        height: auto;
+    }
+
+    .text-section {
+        max-width: 80vw;
+        font-size: 17px;
+    }
+
+    .container {
+        height: auto;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+/* Responsive: Small Desktops & Laptops */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .image-section img {
+        width: 400px;
+        height: auto;
+    }
+
+    .text-section {
+        font-size: 17px;
+    }
+
+    .container {
+        height: auto;
+    }
+}
+
+/* Responsive: Mobile Phones (max-width: 600px) */
+@media (max-width: 600px) {
+    .movies {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 95vh;
+    }
+
+    .container {
+        flex-direction: row;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .marvel,
+    .dc,
+    .jw,
+    .xm,
+    .faf {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .image-section {
+        width: 100%;
+    }
+
+    .image-section .m,
+    .image-section a {
+        width: 90vw;
+        height: auto;
+        margin-left: 0px;
+    }
+    
+
+    .image-section .m1 {
+        height: 30vh;
+        width: 90vw;
+        margin-left: 0px;
+    }
+
+    .text-section a {
+        max-width: 90vw;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .logo svg {
+        width: 120px;
+        height: 30px;
+    }
+
+    .h svg {
+        width: 120px;
+        height: 30px;
+    }
+}
+
+/* Responsive: Tablets (601px - 992px) */
+/* @media (min-width: 601px) and (max-width: 992px) {
+    .movies {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .marvel,
+    .dc,
+    .jw,
+    .xm,
+    .faf {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .image-section .m {
+        width: 80vw;
+        height: auto;
+    }
+
+    .text-section a {
+        max-width: 80vw;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .logo svg {
+        width: 140px;
+        height: 35px;
+    }
+
+    .h svg {
+        width: 140px;
+        height: 35px;
+    }
+} */

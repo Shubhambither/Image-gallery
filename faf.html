@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast and furious</title>
+    <link rel="stylesheet" href="faf.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="nav">
+        <a href="index.html">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 200 40">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+                        font-family="Playwrite AU QLD, sans-serif" font-size="20" fill="black">
+                        CineVerseVault
+                    </text>
+                </svg>
+            </div>
+        </a>
+        <div class="h">
+            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 200 40">
+                <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Playwrite AU QLD"
+                    font-size="24" fill="black">
+                    Images
+                </text>
+            </svg>
+        </div>
+    </div>
+
+
+    <!-- Wrapping main in a fixed-height wrapper to make it scrollable only -->
+<section class="container">
+  <div class="images">
+    <div class="box" data-aos="fade-right"><img src="faf/f1.webp" alt=""></div>
+    <div class="box" data-aos="fade-down"><img src="faf/f2.jpg" alt=""></div>
+    <div class="box" data-aos="fade-down"><img src="faf/f3.jpg" alt=""></div>
+    <div class="box" data-aos="fade-left"><img src="faf/f4.jpg" alt=""></div>
+
+    <!-- Center Zoom Image -->
+    <div class="box center-img" data-aos="zoom-in"><img src="faf/f5.jpg" alt=""></div>
+
+    <div class="box" data-aos="fade-left"><img src="faf/f6.webp" alt=""></div>
+    <div class="box" data-aos="fade-right"><img src="faf/f7.jpg" alt=""></div>
+    <div class="box" data-aos="fade-left"><img src="faf/f8.webp" alt=""></div>
+    <div class="box" data-aos="fade-right"><img src="faf/f9.jpg" alt=""></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lighbox hide">
+  <img class="back" src="images/back.svg" alt="">
+  <img class="res" src="" alt="">
+  <img class="invert" src="images/icons8-close.svg" alt="Close">
+  <img class="next" src="images/f.svg" alt="">
+</div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+       AOS.init({
+  duration: 1000,
+  delay:800,
+  once: false,
+  easing: 'ease-out-cubic'
+});
+        const left = document.querySelector(".left");
+        left.addEventListener("scroll", () => {
+            AOS.refresh();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

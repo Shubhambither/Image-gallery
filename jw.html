@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>John Wick</title>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="jw.css">
+  <link rel="stylesheet" href="marvel.css">
+</head>
+
+<body>
+  <div class="nav">
+    <a href="index.html">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 200 40">
+          <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+            font-family="Playwrite AU QLD, sans-serif" font-size="20" fill="#FFFFFF">
+            CineVerseVault
+          </text>
+        </svg>
+      </div>
+    </a>
+  </div>
+  <div class="h"> <svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 200 40">
+      <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Playwrite AU QLD"
+        font-size="24" fill="#FFFFFF">
+        Images
+      </text>
+    </svg>
+  </div>
+
+  <div class="main">
+    <div class="box1" data-aos="fade-up" data-aos-duration="200">
+      <img class="s" src="jw/j1.jpg" alt="">
+    </div>
+
+    <div class="section1">
+      <div class="box " data-aos="fade-up"  data-aos-delay="300" data-aos-offset="200"><img class="f " id="a" src="jw/j2.jpg" alt=""></div>
+      <div class="box  " data-aos="fade-down" data-aos-delay="300" data-aos-offset="200"><img class="f"  id="b" src="jw/j3.jpg" alt=""></div>
+      <div class="box   " data-aos="fade-left" data-aos-delay="300" data-aos-offset="200"><img class="f" src="jw/j4.jpg" alt=""></div>
+      <div class="box  " data-aos="fade-right" data-aos-delay="300" data-aos-offset="200"><img class="f" src="jw/j5.jpg" alt=""></div>
+      <div class="box  " data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200"><img class="f" src="jw/j6.jpg" alt=""></div>
+      <div class="box  " data-aos="zoom-out" data-aos-delay="300" data-aos-offset="200"><img class="f" src="jw/j7.jpg" alt=""></div>
+      <div class="box  " data-aos="flip-left" data-aos-delay="300" data-aos-offset="200"><img class="f" src="jw/j8.webp" alt=""></div>
+      <div class="box  " data-aos="flip-right" data-aos-delay="300" data-aos-offset="200"><img class="f" src="jw/j9.jpg" alt=""></div>
+ 
+    </div>
+
+    <div class="section">
+      <div class="box1" data-aos="zoom-in"   data-aos-offset="400" data-aos-duration="400">
+        <img class="s" src="jw/j10.jpg" alt="">
+      </div>
+
+      <div class="box1" data-aos="fade-right" data-aos-offset="400">
+      <img class="s" src="jw/j11.jpg" alt="">
+      </div>
+
+      <div class="box1" data-aos="flip-left" data-aos-easing="ease-in-out" data-aos-offset="200">
+       <img class="s" src="jw/j12.webp" alt="">
+      </div>
+    </div>
+    <div class="lighbox hide">
+      <img class="back" src="images/back.svg" alt="">
+      <img class="res" src="" alt="">
+      <img class="invert " src="images/icons8-close.svg" alt="icons">
+      <img class="next" src="images/f.svg" alt="">
+    </div>
+  </div>
+
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // default duration for all
+      once: false     // allows animations to happen every scroll
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

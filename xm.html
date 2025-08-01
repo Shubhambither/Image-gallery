@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Men</title>
+    <link rel="stylesheet" href="xm.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="index.html">
+            <div class="logo ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 200 40">
+                    <text  x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+                        font-family="Playwrite AU QLD, sans-serif" font-size="24" fill=" rgb(93, 93, 21);">
+                        CineVerseVault
+                    </text>
+                </svg>
+            </div>
+        </a>
+         <svg  xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 200 40">
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Playwrite AU QLD"
+                    font-size="24" fill=" rgb(93, 93, 21);">
+                    Images
+                </text>
+            </svg>
+        
+    </div>
+    <section class="container">
+        <div class="images ">
+            <div class="box" data-aos="fade-down" data-aos-delay="500" data-aos-offset="200">
+                <img src="xm/x1.jpg" alt="">
+            </div>
+            <div class="box" data-aos="fade-left" data-aos-delay="500" data-aos-offset="100"><img src="xm/x2.jpg"
+                    alt=""></div>
+            <div class="box" data-aos="fade-left" data-aos-delay="500" data-aos-offset="100"><img src="xm/x3.jpg"
+                    alt=""></div>
+            <div class="box" data-aos="fade-left" data-aos-delay="500" data-aos-offset="200"><img src="xm/x4.jpg"
+                    alt=""></div>
+            <div class="box" data-aos="fade-left" data-aos-delay="500" data-aos-offset="200"><img src="xm/x5.jpg"
+                    alt=""></div>
+            <div class="box" data-aos="fade-up" data-aos-delay="500" ><img src="xm/x6.jpg" alt="">
+            </div>
+            <div class="box" data-aos="fade-up" data-aos-delay="500"  ><img
+                    src="xm/x7.jpg " alt=""></div>
+            <div class="box" data-aos="fade-up" data-aos-delay="500" ><img src="xm/x8.jpg" alt="">
+            </div>
+            <div class="box" data-aos="fade-up" data-aos-delay="500" >
+                <img src="xm/x9.jpg" alt="">
+            </div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x10.jpg"
+                    alt=""></div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x11.jpg"
+                    alt=""></div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x12.png"
+                    alt=""></div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x13.png"
+                    alt=""></div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x14.avif"
+                    alt=""></div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x15.avif "
+                    alt=""></div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x16.avif"
+                    alt=""></div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x17.avif"
+                    alt=""></div>
+            <div class="box" data-aos="zoom-out" data-aos-delay="300" data-aos-offset="100"><img src="xm/x18.avif"
+                    alt=""></div>
+        </div>
+    </section>
+    <div class="lighbox hide">
+        <img class="back" src="images/back.svg" alt="">
+        <img class="res" src="" alt="">
+        <img class="invert " src="images/icons8-close.svg" alt="icons">
+        <img class="next" src="images/f.svg" alt="">
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,    // Allow animations to run multiple times
+            mirror: true    // ✅ Re-apply animation on scroll up
+        });
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
