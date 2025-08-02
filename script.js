@@ -18,43 +18,24 @@ function setFavicon(url, type = "images/png") {
 // Example usage
 setFavicon("images/camera.svg", "image/x-icon");  // Use "image/x-icon" for .ico files
 
-async function getimages(n) {
-    let i = await fetch(n);
-    console.log(i)
-    let response = await i .text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    // console.log(response);
-    let as = div.getElementsByTagName("a");
-    // console.log(as);
-    let images = [];
-    for (let i = 0; i < as.length; i++) {
-        const element = as[i];
-       if (element.href.match(/\.(jpg|jpeg|png|gif|webp|svg|gif|avif)$/)) {
-        const url = new URL(element.href); 
-        images.push(decodeURIComponent(url.pathname));
-console.log(url.pathname)
-        }
-
-    }
-    images.sort((a, b) => {
-    let numA = a.match(/\d+/);
-    let numB = b.match(/\d+/);
-    return Number(numA) - Number(numB);
-});
-
-    return images;
+async function getImagesFromJSON(folder) {
+    const response = await fetch("images.json");
+    const data = await response.json();
+    return data[folder] || [];
 }
 
 let currentIndex = 0;
 
 window.addEventListener("DOMContentLoaded", async () => {
-    const path = window.location.pathname; 
-    console.log("Path",path);
+     const path = window.location.pathname; 
     const pageName = path.split("/").pop(); 
     const folder = pageName.replace(".html", ""); 
-    const folderPath = `/${folder}/`;
-    let images = await getimages(folderPath);
+
+    let images = await getImagesFromJSON(folder);
+    if (images.length === 0) {
+        console.warn(`No images found for folder: ${folder}`);
+        return;
+    }
 
 
     c.forEach((card, index) => {
@@ -146,7 +127,7 @@ function setupBoxLightbox() {
   const lightboxImg = lightbox.querySelector(".res");
   const nextBtn = lightbox.querySelector(".next");
   const backBtn = lightbox.querySelector(".back");
-  const closeBtn = lightbox.querySelector(".invert");
+  const closeBtn = document.querySelector(".invert");
 
   // Collect image elements in exact order of .box elements
   const imageElements = [];
@@ -176,10 +157,11 @@ function setupBoxLightbox() {
     lightboxImg.src = imageElements[currentIndex].src;
   });
 
-  closeBtn.addEventListener("click", () => {
-    lightbox.classList.add("hide");
-  });
+  document.querySelector('.invert').addEventListener('click', () => {
+        lightbox.classList.add('hide');
+    });
 }
+setupBoxLightbox();
 
 document.addEventListener("keydown", (e) => {
   const lightbox = document.querySelector(".lighbox");

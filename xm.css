@@ -167,7 +167,7 @@ body::before {
 }
 
 .invert {
-  z-index: 1;
+  z-index: 999;
   align-self: flex-start;
   margin-left: auto;
   cursor: pointer;
