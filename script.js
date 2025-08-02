@@ -74,6 +74,18 @@ window.addEventListener("DOMContentLoaded", async () => {
         else if (e.key === "Escape") invert.click();
     });
 
+    function setFavicon(url, type = "images/png") {
+    let link = document.querySelector("link[rel~='icon']");
+    
+    if (!link) {
+        link = document.createElement("link");
+        link.rel = "icon";
+        document.head.appendChild(link);
+    }
+
+    link.href = url;
+    link.type = type;
+}
     // ✅ Optional: favicon setup
     setFavicon("images/camera.svg", "image/x-icon");
 });
